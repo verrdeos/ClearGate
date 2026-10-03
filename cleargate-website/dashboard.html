@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard · ClearGate Student Clearance Portal</title>
+  <meta name="description" content="Your clearance overview: progress across all offices and what needs your attention.">
+  <meta name="theme-color" content="#07111f">
+  <link rel="icon" type="image/png" href="assets/img/logo-mark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Sidebar">
+      <div class="sidebar__top">
+        <a class="sidebar__brand" href="dashboard.html">
+          <span class="sidebar__eyebrow">Student Portal</span>
+          <span class="sidebar__name">CLEARGATE</span>
+        </a>
+        <button class="sidebar__close" type="button" data-nav-close aria-label="Close menu">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+        </button>
+      </div>
+
+      <nav aria-label="Main">
+        <ul class="nav" role="list">
+          <li>
+            <a class="nav-link" href="dashboard.html" aria-current="page">
+              <span class="nav-link__icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+              </span>
+              Dashboard
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="requirements.html">
+              <span class="nav-link__icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><rect width="8" height="4" x="8" y="2" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+              </span>
+              My Requirements
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="clearance-status.html">
+              <span class="nav-link__icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/><path d="m9 13 2 2 4-4"/></svg>
+              </span>
+              Clearance Status
+            </a>
+          </li>
+          <li>
+            <a class="nav-link" href="index.html">
+              <span class="nav-link__icon" aria-hidden="true">
+                <svg class="icon" viewBox="0 0 24 24"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              </span>
+              Log Out
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <div class="sidebar-backdrop" data-nav-close aria-hidden="true"></div>
+
+    <div class="main">
+      <div class="container">
+        <header class="topbar">
+          <button class="menu-toggle" type="button" data-nav-toggle aria-controls="sidebar" aria-expanded="false" aria-label="Open menu">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16"/><path d="M4 12h16"/><path d="M4 18h16"/></svg>
+          </button>
+
+          <form class="search" role="search" action="requirements.html" method="get">
+            <label class="visually-hidden" for="search">Search requirements and offices</label>
+            <svg class="icon search__icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input class="search__input" id="search" name="q" type="search" placeholder="Search" autocomplete="off">
+          </form>
+
+          <div class="topbar__actions">
+            <button class="icon-btn" type="button" aria-label="Notifications">
+              <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M10.268 21a2 2 0 0 0 3.464 0"/><path d="M3.262 15.326A1 1 0 0 0 4 17h16a1 1 0 0 0 .74-1.673C19.41 13.956 18 12.499 18 8A6 6 0 0 0 6 8c0 4.499-1.411 5.956-2.738 7.326"/></svg>
+            </button>
+
+            <details class="user-menu">
+              <summary class="user-chip" aria-label="Account menu for Ariel Tapnio">
+                <span class="user-chip__avatar user-chip__avatar--initials" aria-hidden="true">AT</span>
+                <span class="user-chip__text">
+                  <span class="user-chip__name">Ariel Tapnio</span>
+                  <span class="user-chip__role">Student</span>
+                </span>
+                <svg class="icon icon--sm user-chip__chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+              </summary>
+              <div class="user-menu__panel">
+                <a class="user-menu__item" href="clearance-status.html">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  My clearance
+                </a>
+                <a class="user-menu__item" href="index.html">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><path d="m16 17 5-5-5-5"/><path d="M21 12H9"/></svg>
+                  Log out
+                </a>
+              </div>
+            </details>
+          </div>
+        </header>
+
+        <main id="main">
+          <div class="page-head">
+            <h1 class="page-title page-title--light">Good day, Ariel</h1>
+            <span class="pill">Student clearance portal</span>
+          </div>
+
+          <div class="dash-top">
+            <section class="card overall" aria-labelledby="overall-title">
+              <div class="card__head">
+                <h2 class="card__eyebrow" id="overall-title">Overall Clearance</h2>
+                <span class="badge badge--indigo">4 of 6 offices</span>
+              </div>
+              <p class="overall__value">You’re<br>77% Done</p>
+              <div class="progress" role="progressbar" aria-label="Overall clearance progress"
+                   aria-valuemin="0" aria-valuemax="100" aria-valuenow="77">
+                <div class="progress__bar" style="--value: 77%"></div>
+              </div>
+              <p class="overall__meta">4 of 6 offices done</p>
+            </section>
+
+            <section class="card alert-card" aria-labelledby="alert-title">
+              <h2 class="alert-card__title" id="alert-title">
+                <span class="alert-dot" aria-hidden="true">
+                  <svg class="icon icon--sm" viewBox="0 0 24 24" style="stroke-width: 3"><path d="M12 6v7"/><path d="M12 18h.01"/></svg>
+                </span>
+                Action needed: Library
+              </h2>
+              <div class="alert-card__actions">
+                <a class="btn btn--primary btn--lg" href="clearance-status.html#office-library">
+                  View Details<span class="visually-hidden"> for Library</span>
+                </a>
+                <button class="btn btn--plain" type="button" data-copy-email="library@example.edu">
+                  <svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  Copy office email</button>
+              </div>
+            </section>
+          </div>
+
+          <section aria-labelledby="offices-title">
+            <div class="section-head">
+              <h2 class="section-title" id="offices-title">Clearance by office</h2>
+              <a class="link-accent" href="requirements.html">View all Requirements</a>
+            </div>
+
+            <ul class="office-grid" role="list">
+              <li>
+                <article class="card office-card">
+                  <span class="badge badge--indigo">Approved</span>
+                  <h3 class="office-card__name">Registrar</h3>
+                  <p class="office-card__detail">(All Records verified)</p>
+                </article>
+              </li>
+              <li>
+                <article class="card office-card">
+                  <span class="badge badge--amber">Pending</span>
+                  <h3 class="office-card__name">Accounting</h3>
+                  <p class="office-card__detail">Review, balance $20.00</p>
+                </article>
+              </li>
+              <li>
+                <article class="card office-card">
+                  <span class="badge badge--action">Need Action</span>
+                  <h3 class="office-card__name">Library</h3>
+                  <p class="office-card__detail">(1 unreturned book)</p>
+                </article>
+              </li>
+              <li>
+                <article class="card office-card">
+                  <span class="badge badge--indigo">Approved</span>
+                  <h3 class="office-card__name">Guidance Office</h3>
+                  <p class="office-card__detail">(Cleared!)</p>
+                </article>
+              </li>
+              <li>
+                <article class="card office-card">
+                  <span class="badge badge--indigo">Approved</span>
+                  <h3 class="office-card__name">Dean's Office</h3>
+                  <p class="office-card__detail">(Cleared)</p>
+                </article>
+              </li>
+              <li>
+                <article class="card office-card">
+                  <span class="badge badge--indigo">Approved</span>
+                  <h3 class="office-card__name">Property Custodian</h3>
+                  <p class="office-card__detail">(Approved)</p>
+                </article>
+              </li>
+            </ul>
+          </section>
+        </main>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

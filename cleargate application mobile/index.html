@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ClearGate</title>
+  <meta name="description" content="ClearGate: track your student clearance across every school office.">
+  <meta name="theme-color" content="#07111f">
+  <meta name="color-scheme" content="dark">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="ClearGate">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="assets/css/app.css">
+  <script src="assets/js/app.js" defer></script>
+</head>
+<body>
+  <!-- Icon sprite (Lucide-style, 24px grid) -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></symbol>
+    <symbol id="i-activity" viewBox="0 0 24 24"><path d="M3 12h4l3-8 4 16 3-8h4"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/></symbol>
+    <symbol id="i-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-arrow-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></symbol>
+    <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.9 4.2A10 10 0 0 1 12 4c6.5 0 10 8 10 8a17 17 0 0 1-2.2 3.2M6.6 6.6C3.6 8.5 2 12 2 12s3.5 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m8.5 12 2.5 2.5 4.5-5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-alert" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 19.5V5a2 2 0 0 1 2-2h14v16H6.5a2.5 2.5 0 0 0 0 5H20"/></symbol>
+    <symbol id="i-wallet" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="14" rx="2"/><path d="M3 10h18M16 15h2"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 3H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><path d="M14 3v6h6M9 14h6M9 18h4"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.5-1.5 3-3.2 3-5.5A5.5 5.5 0 0 0 12 5.5 5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4 3 5.5l7 7z"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 2 9 2 12 0v-5"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><path d="M21 8 12 3 3 8v8l9 5 9-5z"/><path d="m3 8 9 5 9-5M12 13v8"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+    <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"/></symbol>
+    <symbol id="i-logout" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></symbol>
+    <symbol id="i-sparkle" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M6 18l2.5-2.5M15.5 8.5 18 6"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15H4a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v1"/></symbol>
+  </svg>
+
+  <noscript><p class="noscript">ClearGate needs JavaScript to run. Please enable it and reload.</p></noscript>
+
+  <div class="app app--auth" id="app">
+
+    <!-- ===================== LOGIN ===================== -->
+    <section class="auth screen" data-screen="login" aria-labelledby="login-title" hidden>
+      <header class="auth-hero">
+        <img class="auth-hero__logo" src="assets/img/logo.png" width="424" height="382" alt="ClearGate">
+        <p class="auth-hero__title">Your clearance,<br>all in one place.</p>
+      </header>
+      <div class="auth-panel">
+        <p class="auth-eyebrow">Welcome back</p>
+        <h1 class="auth-title" id="login-title" tabindex="-1">Log in to your Account</h1>
+        <form class="auth-form" data-form="login" novalidate>
+          <p class="auth-note" data-demo-note hidden></p>
+          <div class="field">
+            <label class="field__label" for="login-id">Student ID or Email</label>
+            <input class="field__control" id="login-id" name="username" type="text" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="Student ID or Email" required>
+          </div>
+          <div class="field">
+            <label class="field__label" for="login-password">Password</label>
+            <div class="field__wrap">
+              <input class="field__control field__control--toggle" id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Password" required>
+              <button class="field__toggle" type="button" data-password-toggle="login-password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon icon-eye" aria-hidden="true"><use href="#i-eye"/></svg>
+                <svg class="icon icon-eye-off" aria-hidden="true"><use href="#i-eye-off"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="field__error" data-error role="alert" hidden></p>
+          <div class="form-row">
+            <label class="check">
+              <input class="check__input" type="checkbox" name="remember" checked>
+              Remember me
+            </label>
+            <a class="link-quiet" href="#forgot">Forgot Password?</a>
+          </div>
+          <button class="btn-glass" type="submit">
+            LOGIN
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </button>
+        </form>
+        <p class="auth-foot" data-school>© Immaculada Conception College · Student Clearance Portal</p>
+      </div>
+    </section>
+
+    <!-- ===================== FORGOT PASSWORD ===================== -->
+    <section class="auth screen" data-screen="forgot" aria-labelledby="forgot-title" hidden>
+      <header class="auth-hero auth-hero--compact">
+        <img class="auth-hero__logo" src="assets/img/logo-mark.png" width="56" height="56" alt="">
+        <span>
+          <strong class="auth-hero__brand-name">ClearGate</strong>
+          <span class="auth-hero__brand-tag">Student Clearance Portal</span>
+        </span>
+        <a class="back-btn" href="#login" aria-label="Back to login">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+        </a>
+      </header>
+      <div class="auth-panel">
+        <h1 class="auth-title" id="forgot-title" tabindex="-1">Forgot Password</h1>
+        <p class="auth-lead">Enter your registered email address to reset your password.</p>
+        <form class="auth-form" data-form="forgot" novalidate>
+          <div class="field">
+            <label class="field__label" for="forgot-email">Email</label>
+            <input class="field__control" id="forgot-email" name="email" type="email" inputmode="email" autocomplete="email" autocapitalize="none" spellcheck="false" placeholder="name@school.edu" required>
+          </div>
+          <p class="field__error" data-error role="alert" hidden></p>
+          <button class="btn-glass" type="submit">SEND RESET LINK</button>
+          <a class="link-quiet" href="#login" style="justify-self:center">Back to login</a>
+        </form>
+        <p class="auth-foot" data-school>© Immaculada Conception College · Student Clearance Portal</p>
+      </div>
+    </section>
+
+    <!-- ===================== RESET PASSWORD ===================== -->
+    <section class="auth screen" data-screen="reset" aria-labelledby="reset-title" hidden>
+      <header class="auth-hero auth-hero--compact">
+        <img class="auth-hero__logo" src="assets/img/logo-mark.png" width="56" height="56" alt="">
+        <span>
+          <strong class="auth-hero__brand-name">ClearGate</strong>
+          <span class="auth-hero__brand-tag">Student Clearance Portal</span>
+        </span>
+        <a class="back-btn" href="#forgot" aria-label="Back">
+          <svg class="icon" aria-hidden="true"><use href="#i-arrow-left"/></svg>
+        </a>
+      </header>
+      <div class="auth-panel">
+        <h1 class="auth-title" id="reset-title" tabindex="-1">Reset Password</h1>
+        <p class="auth-lead">Create a new password for your account.</p>
+        <form class="auth-form" data-form="reset" novalidate>
+          <div class="field">
+            <label class="field__label" for="new-password">New Password</label>
+            <div class="field__wrap">
+              <input class="field__control field__control--toggle" id="new-password" name="new-password" type="password" autocomplete="new-password" minlength="8" placeholder="New password" aria-describedby="new-password-hint" required>
+              <button class="field__toggle" type="button" data-password-toggle="new-password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon icon-eye" aria-hidden="true"><use href="#i-eye"/></svg>
+                <svg class="icon icon-eye-off" aria-hidden="true"><use href="#i-eye-off"/></svg>
+              </button>
+            </div>
+            <p class="field__hint" id="new-password-hint">At least 8 characters.</p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="confirm-password">Confirm Password</label>
+            <div class="field__wrap">
+              <input class="field__control field__control--toggle" id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" placeholder="Confirm password" required>
+              <button class="field__toggle" type="button" data-password-toggle="confirm-password" aria-pressed="false" aria-label="Show password">
+                <svg class="icon icon-eye" aria-hidden="true"><use href="#i-eye"/></svg>
+                <svg class="icon icon-eye-off" aria-hidden="true"><use href="#i-eye-off"/></svg>
+              </button>
+            </div>
+          </div>
+          <p class="field__error" data-error role="alert" hidden></p>
+          <button class="btn-glass" type="submit">RESET PASSWORD</button>
+        </form>
+        <p class="auth-foot" data-school>© Immaculada Conception College · Student Clearance Portal</p>
+      </div>
+    </section>
+
+    <!-- ===================== RESET SUCCESS ===================== -->
+    <section class="auth screen" data-screen="done" aria-labelledby="done-title" hidden>
+      <header class="auth-hero auth-hero--compact">
+        <img class="auth-hero__logo" src="assets/img/logo-mark.png" width="56" height="56" alt="">
+        <span>
+          <strong class="auth-hero__brand-name">ClearGate</strong>
+          <span class="auth-hero__brand-tag">Student Clearance Portal</span>
+        </span>
+        <span></span>
+      </header>
+      <div class="auth-panel">
+        <div class="done-badge" aria-hidden="true">
+          <svg class="icon"><use href="#i-check"/></svg>
+        </div>
+        <h1 class="auth-title" id="done-title" tabindex="-1" style="text-align:center">Password reset</h1>
+        <p class="done-text">Your password has been reset successfully. You can now log in with your new password.</p>
+        <div class="auth-form">
+          <a class="btn-glass" href="#login">
+            BACK TO LOGIN
+            <svg class="icon" aria-hidden="true"><use href="#i-arrow-right"/></svg>
+          </a>
+        </div>
+        <p class="auth-foot" data-school>© Immaculada Conception College · Student Clearance Portal</p>
+      </div>
+    </section>
+
+    <!-- ===================== SIGNED-IN SHELL ===================== -->
+    <div class="shell" data-shell hidden>
+      <header class="appbar">
+        <a class="appbar__brand" href="#home" aria-label="ClearGate home">
+          <img class="appbar__mark" src="assets/img/logo-mark.png" width="36" height="36" alt="">
+          <span>
+            <span class="appbar__eyebrow">Student Portal</span>
+            <span class="appbar__name">ClearGate</span>
+          </span>
+        </a>
+        <button class="icon-btn" type="button" data-open-notifications aria-label="Notifications, 2 unread">
+          <svg class="icon" aria-hidden="true"><use href="#i-bell"/></svg>
+          <span class="icon-btn__dot" aria-hidden="true"></span>
+        </button>
+        <a class="avatar" href="#profile" aria-label="Your profile">AT</a>
+      </header>
+
+      <main class="content" id="content" tabindex="-1"></main>
+
+      <nav class="tabbar" aria-label="Main">
+        <ul class="tabbar__list" role="list">
+          <li>
+            <a class="tab" href="#home" data-tab="home">
+              <span class="tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-home"/></svg></span>
+              Home
+            </a>
+          </li>
+          <li>
+            <a class="tab" href="#requirements" data-tab="requirements">
+              <span class="tab__icon">
+                <svg class="icon" aria-hidden="true"><use href="#i-list"/></svg>
+                <span class="tab__count" data-todo-count></span>
+              </span>
+              Requirements
+            </a>
+          </li>
+          <li>
+            <a class="tab" href="#status" data-tab="status">
+              <span class="tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-activity"/></svg></span>
+              Status
+            </a>
+          </li>
+          <li>
+            <a class="tab" href="#profile" data-tab="profile">
+              <span class="tab__icon"><svg class="icon" aria-hidden="true"><use href="#i-user"/></svg></span>
+              Profile
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Bottom sheet (office details / notifications) -->
+    <dialog class="sheet" id="sheet" aria-labelledby="sheet-title">
+      <div class="sheet__handle" aria-hidden="true"></div>
+      <div class="sheet__head">
+        <h2 class="sheet__title" id="sheet-title"></h2>
+        <button class="sheet__close" type="button" data-sheet-close aria-label="Close">
+          <svg class="icon" aria-hidden="true"><use href="#i-x"/></svg>
+        </button>
+      </div>
+      <div class="sheet__body" id="sheet-body"></div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </div>
+</body>
+</html>
